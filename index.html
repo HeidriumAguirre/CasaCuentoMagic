@@ -394,7 +394,7 @@ body.door-opened .site-header { opacity: 1; }
 .hero {
   position: relative; min-height: 100vh; min-height: 100svh;
   display: flex; align-items: center; justify-content: center;
-  overflow: hidden; padding: 100px 24px 60px;
+  overflow: hidden; padding: 100px 24px 80px;
   background: linear-gradient(180deg, var(--color-noche), var(--color-bosque));
 }
 .hero-bg {
@@ -435,9 +435,11 @@ body.door-opened .hero-content { opacity: 1; transform: translateY(0); }
   text-transform: uppercase;
   color: var(--color-oro-brillante);
   margin-bottom: 32px;
+  margin-top: 40px;
   white-space: nowrap;
   max-width: 100%;
   overflow: visible;
+  position: relative; z-index: 3;
 }
 .hero-title {
   font-family: var(--font-script);
