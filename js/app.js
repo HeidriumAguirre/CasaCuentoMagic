@@ -13,6 +13,29 @@
   };
 
   // ============================================
+  // LOGO MULTI-IDIOMA
+  // ============================================
+  const initMultiLangLogo = () => {
+    const lang = (navigator.language || 'es').toLowerCase();
+    const isSpanish = lang.startsWith('es');
+    const logoEs = 'assets/logo-refugio-casacuento-es.png';
+    const logoEn = 'assets/logo-magic-house-en.png';
+    const altEs = 'Refugio CasaCuento Hostal Mágico';
+    const altEn = 'Magic House Hotel Boutique - Refugio';
+
+    const headerLogo = document.getElementById('headerLogo');
+    const footerLogo = document.getElementById('footerLogo');
+
+    if (!isSpanish) {
+      if (headerLogo) { headerLogo.src = logoEn; headerLogo.alt = altEn; }
+      if (footerLogo) { footerLogo.src = logoEn; footerLogo.alt = altEn; }
+    } else {
+      if (headerLogo) { headerLogo.src = logoEs; headerLogo.alt = altEs; }
+      if (footerLogo) { footerLogo.src = logoEs; footerLogo.alt = altEs; }
+    }
+  };
+
+  // ============================================
   // SPLIT-DOOR
   // ============================================
   const initDoor = () => {
@@ -356,6 +379,7 @@
 
   ready.then(() => {
     setYear();
+    initMultiLangLogo();
     initDoor();
     initCursor();
     initElf();
