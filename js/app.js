@@ -41,6 +41,8 @@
   const initCursor = () => {
     const cursor = document.getElementById('magicCursor');
     if (!cursor) return;
+    // Activar modo varita: ocultar cursor del sistema solo en esta página
+    document.body.classList.add('magical-cursor-active');
     let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
     let lastSparkTime = 0;
     let isReady = false;

@@ -34,18 +34,19 @@ body {
   color: var(--color-texto);
   background: var(--color-crema);
   overflow-x: hidden;
-  cursor: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-html, body, a, button, input, textarea, select, [role="button"], [onclick], label {
+/* Cursor del sistema visible por defecto. La varita mágica (solo en index) lo oculta. */
+body.magical-cursor-active { cursor: none; }
+/* Cursor del sistema visible por defecto. La varita mágica (solo en index) lo oculta en estos elementos. */
+body.magical-cursor-active,
+body.magical-cursor-active a,
+body.magical-cursor-active button,
+body.magical-cursor-active [role="button"],
+body.magical-cursor-active [onclick],
+body.magical-cursor-active label {
   cursor: none !important;
-}
-/* Mostrar cursor del sistema en campos de texto donde la varita no funciona bien */
-input[type="text"], input[type="email"], input[type="date"], input[type="number"],
-input[type="password"], input[type="search"], input[type="tel"], input[type="url"],
-textarea, select {
-  cursor: text !important;
 }
 /* Ocultar scrollbar mientras la puerta está activa */
 body.door-active { overflow: hidden; }
@@ -165,14 +166,6 @@ h1, h2, h3, h4, h5, h6 { font-weight: 600; }
 .door-cta-btn svg { width: 20px; height: 20px; }
 
 
-/* Cursor del sistema visible en inputs y textareas (la varita no funciona ahí) */
-input, textarea, select, input *, textarea *, select * {
-  cursor: text !important;
-}
-input[type="button"], input[type="submit"], input[type="reset"],
-button, a, label, [role="button"], [onclick] {
-  cursor: pointer !important;
-}
 
 /* ============================================
    MAGIC CURSOR
