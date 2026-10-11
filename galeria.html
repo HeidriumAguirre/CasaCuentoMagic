@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Galería completa de CasaCuento Hotel & Spa - Un recorrido visual por cada rincón del hotel." />
+<meta name="theme-color" content="#1A1A2E" />
+<title>Galería · CasaCuento Hotel & Spa</title>
+<link rel="icon" type="image/png" href="Fotos CasaCuento/Logo.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<style>
+  .galeria-magica-hero { padding: 100px 24px 32px; text-align: center; background: linear-gradient(180deg, #1A1A2E 0%, #2D3D2E 100%); color: #FFF8E7; }
+  .galeria-magica-hero h1 { font-family: 'Great Vibes', cursive; font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin: 10px 0; text-shadow: 0 0 30px rgba(201, 161, 74, 0.4), 0 4px 16px rgba(0, 0, 0, 0.4); line-height: 1.1; }
+  .galeria-magica-hero p { font-family: 'Cormorant Garamond', serif; font-style: italic; opacity: 0.9; max-width: 600px; margin: 0 auto; font-size: 0.9rem; }
+  .galeria-magica { background: #1A1A2E; padding: 40px 24px 80px; min-height: 60vh; }
+  .galeria-magica .container { max-width: 1200px; margin: 0 auto; }
+  .galeria-magica .galeria-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 640px) { .galeria-magica .galeria-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .galeria-magica .galeria-grid { grid-template-columns: repeat(3, 1fr); } }
+  .galeria-magica .galeria-item { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 1; box-shadow: 0 4px 16px rgba(0,0,0,0.3); border: 1px solid rgba(201, 161, 74, 0.2); transition: all 0.4s; overflow: hidden; }
+  .galeria-magica .galeria-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+  .galeria-magica .galeria-item:hover img { transform: scale(1.08); }
+  .galeria-magica .galeria-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,46,0.9), transparent 60%); opacity: 0; transition: opacity 0.4s; display: flex; align-items: flex-end; padding: 16px; }
+  .galeria-magica .galeria-item:hover .galeria-overlay { opacity: 1; }
+  .galeria-magica .galeria-caption { font-family: 'Great Vibes', cursive; font-size: 1.1rem; color: #FFF8E7; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+</style>
+<script src="js/includes.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#inicio" class="skip-link">Saltar al contenido principal</a>
+<div data-include="partials/header.html"></div>
+
+<main id="inicio">
+  <section class="galeria-magica-hero">
+    <span class="section-eyebrow" style="color: #C9A14A;">— Galería —</span>
+    <h1>Galería Encantada</h1>
+    <p>Un recorrido visual por cada rincón de CasaCuento.</p>
+  </section>
+
+  <section class="galeria-magica">
+    <div class="container">
+      <div class="galeria-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+</main>
+
+<div data-include="partials/footer.html"></div>
+<div data-include="partials/chatbot.html"></div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:20px;">
+  <button id="lightboxClose" aria-label="Cerrar" style="position:absolute;top:20px;right:20px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.1);color:white;font-size:20px;">✕</button>
+  <img id="lightboxImg" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:8px;" />
+</div>
+
+<script>
+(function() {
+  const fotos = [
+    { f: 'galeria-01', c: 'Piscina y descanso' },
+    { f: 'galeria-02', c: 'Habitación boutique' },
+    { f: 'galeria-03', c: 'Loft moderno' },
+    { f: 'galeria-04', c: 'Suite con vista' },
+    { f: 'galeria-05', c: 'Cabaña rodeada de bosque' },
+    { f: 'galeria-06', c: 'Naturaleza nativa' },
+    { f: 'galeria-07', c: 'Jardín interior' },
+    { f: 'galeria-08', c: 'Atardecer' },
+    { f: 'galeria-09', c: 'Detalle arquitectónico' },
+    { f: 'galeria-10', c: 'Cocina equipada' },
+    { f: 'galeria-11', c: 'Terraza' },
+  ];
+  const grid = document.getElementById('galleryGrid');
+  if (grid) {
+    fotos.forEach(item => {
+      const fig = document.createElement('figure');
+      fig.className = 'galeria-item';
+      fig.dataset.caption = item.c;
+      fig.innerHTML = `<img src="fotos-web/galeria/${item.f}.webp" alt="${item.c}" loading="lazy" /><div class="galeria-overlay"><figcaption class="galeria-caption">${item.c}</figcaption></div>`;
+      grid.appendChild(fig);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
