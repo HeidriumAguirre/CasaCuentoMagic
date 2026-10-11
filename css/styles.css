@@ -277,7 +277,9 @@ body.door-opened .music-toggle { opacity: 1; pointer-events: all; }
   transition: all 0.3s;
   opacity: 0;
 }
-body.door-opened .site-header { opacity: 1; }
+/* Mostrar header en todas las páginas que no tienen la puerta */
+body.door-opened .site-header,
+body:not(.door-active):not(.door-opened) .site-header { opacity: 1; }
 .site-header.scrolled {
   background: rgba(26, 26, 46, 0.98);
   padding: 12px 0;
