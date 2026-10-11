@@ -43,13 +43,24 @@
     if (!cursor) return;
     let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
     let lastSparkTime = 0;
-    // Posición inicial centrada antes del primer mousemove
-    cursor.style.transform = `translate3d(${mouseX - 18}px, ${mouseY - 18}px, 0)`;
+    let isReady = false;
+
+    // Forzar que el cursor sea visible
+    cursor.style.display = 'block';
+    cursor.style.visibility = 'visible';
+    cursor.style.opacity = '1';
+
+    // Posición inicial centrada (usando left/top para evitar conflictos con transform CSS)
+    const setPosition = (x, y) => {
+      cursor.style.left = (x - 18) + 'px';
+      cursor.style.top = (y - 18) + 'px';
+    };
+    setPosition(mouseX, mouseY);
 
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX; mouseY = e.clientY;
-      // Usar translate3d directamente sin transition (más fluido, sin lag)
-      cursor.style.transform = `translate3d(${mouseX - 18}px, ${mouseY - 18}px, 0)`;
+      setPosition(mouseX, mouseY);
+      isReady = true;
       const now = Date.now();
       if (now - lastSparkTime > 60) {
         createSpark(mouseX, mouseY);
@@ -58,6 +69,12 @@
     });
     document.addEventListener('mousedown', () => cursor.classList.add('clicking'));
     document.addEventListener('mouseup', () => cursor.classList.remove('clicking'));
+
+    // Re-aplicar posición al cargar la página
+    requestAnimationFrame(() => {
+      setPosition(mouseX, mouseY);
+      cursor.classList.add('visible');
+    });
 
     function createSpark(x, y) {
       const spark = document.createElement('div');
