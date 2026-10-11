@@ -270,8 +270,8 @@ body.door-opened .music-toggle { opacity: 1; pointer-events: all; }
    ============================================ */
 .site-header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  padding: 20px 0;
-  background: linear-gradient(180deg, rgba(26, 26, 46, 0.6), transparent);
+  padding: 12px 0;
+  background: linear-gradient(180deg, rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.5));
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: all 0.3s;
@@ -282,7 +282,7 @@ body.door-opened .site-header,
 body:not(.door-active):not(.door-opened) .site-header { opacity: 1; }
 .site-header.scrolled {
   background: rgba(26, 26, 46, 0.98);
-  padding: 12px 0;
+  padding: 8px 0;
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
   border-bottom: 1px solid rgba(201, 161, 74, 0.2);
 }
@@ -296,7 +296,7 @@ body:not(.door-active):not(.door-opened) .site-header { opacity: 1; }
 }
 .logo-name {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  font-size: clamp(1rem, 2vw, 1.4rem);
   font-weight: 600;
   color: var(--color-oro-brillante);
   letter-spacing: 0.12em;
@@ -329,11 +329,14 @@ body:not(.door-active):not(.door-opened) .site-header { opacity: 1; }
 .nav-link {
   color: var(--color-luz);
   font-family: var(--font-display);
-  font-size: 0.85rem; font-weight: 500;
-  letter-spacing: 0.1em;
+  font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 8px 0;
+  padding: 6px 0;
   position: relative;
+  background: none; border: none; cursor: none;
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: var(--font-body);
 }
 .nav-link::after {
   content: ''; position: absolute; bottom: 0; left: 50%;
