@@ -35,3 +35,4 @@ package-lock.json
 *.orig
 .env
 .env.local
+.vercel
