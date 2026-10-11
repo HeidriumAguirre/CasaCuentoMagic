@@ -269,7 +269,7 @@ body.door-opened .music-toggle { opacity: 1; pointer-events: all; }
    HEADER
    ============================================ */
 .site-header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 80;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   padding: 20px 0;
   background: linear-gradient(180deg, rgba(26, 26, 46, 0.6), transparent);
   backdrop-filter: blur(8px);
@@ -279,9 +279,10 @@ body.door-opened .music-toggle { opacity: 1; pointer-events: all; }
 }
 body.door-opened .site-header { opacity: 1; }
 .site-header.scrolled {
-  background: rgba(45, 61, 46, 0.95);
+  background: rgba(26, 26, 46, 0.98);
   padding: 12px 0;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  border-bottom: 1px solid rgba(201, 161, 74, 0.2);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
