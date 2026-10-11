@@ -6,7 +6,7 @@
 /* Hero de la página de alojamientos (mágico) */
 .alojamiento-hero-magico {
   position: relative;
-  padding: 110px 24px 40px;
+  padding: 100px 24px 32px;
   text-align: center;
   background: linear-gradient(180deg, #1A1A2E 0%, #2D3D2E 100%);
   color: #FFF8E7;
@@ -22,15 +22,15 @@
 .alojamiento-hero-magico > * { position: relative; z-index: 1; }
 .alojamiento-hero-title {
   font-family: 'Great Vibes', cursive;
-  font-size: 2.25rem;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
   color: #FFF8E7;
-  margin: 16px 0;
+  margin: 10px 0;
   text-shadow: 0 0 30px rgba(201, 161, 74, 0.4), 0 4px 16px rgba(0, 0, 0, 0.4);
   line-height: 1.1;
 }
 .alojamiento-hero-subtitle {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.0625rem;
+  font-size: 0.85rem;
   font-style: italic;
   opacity: 0.9;
   max-width: 600px;
@@ -43,8 +43,8 @@
   border: 1px solid rgba(201, 161, 74, 0.3);
   border-radius: 14px;
   overflow: hidden;
-  margin-bottom: 24px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   position: relative;
 }
 .alojamiento-card::before {
@@ -56,24 +56,25 @@
 .alojamiento-card-grid {
   display: grid;
   grid-template-columns: 1fr;
-  position: relative;
 }
 @media (min-width: 900px) { .alojamiento-card-grid { grid-template-columns: 1fr 1fr; } }
 
 .alojamiento-gallery {
   position: relative;
   background: var(--color-bosque-dark);
-  min-height: 280px;
-  max-height: 380px;
+  min-height: 260px;
+  max-height: 320px;
   overflow: hidden;
+  display: flex;
 }
 .alojamiento-gallery-main {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  max-height: 320px;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s;
 }
-.alojamiento-gallery:hover .alojamiento-gallery-main { transform: scale(1.05); }
 .alojamiento-thumbs {
   position: absolute; bottom: 12px; left: 12px; right: 12px;
   display: flex; gap: 8px;
@@ -82,8 +83,8 @@
 }
 .alojamiento-thumbs::-webkit-scrollbar { display: none; }
 .alojamiento-thumb {
-  width: 60px; height: 60px;
-  border-radius: 8px;
+  width: 50px; height: 50px;
+  border-radius: 6px;
   border: 2px solid #FFF8E7;
   cursor: none;
   object-fit: cover;
@@ -93,212 +94,180 @@
 }
 .alojamiento-thumb.active, .alojamiento-thumb:hover { opacity: 1; transform: scale(1.05); }
 
-.alojamiento-body { padding: 32px 28px; }
+.alojamiento-body { padding: 20px 22px; }
 .alojamiento-tipo {
   display: inline-block;
-  padding: 4px 14px;
+  padding: 3px 10px;
   background: rgba(201, 161, 74, 0.15);
   color: var(--color-oro);
   font-family: 'Cinzel', serif;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 600;
   border-radius: 999px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   border: 1px solid rgba(201, 161, 74, 0.3);
 }
 .alojamiento-nombre {
   font-family: 'Great Vibes', cursive;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--color-oro-brillante);
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  line-height: 1.1;
 }
 .alojamiento-descripcion {
   color: var(--color-texto);
-  line-height: 1.6;
-  margin-bottom: 14px;
-  font-size: 0.875rem;
+  line-height: 1.55;
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 /* Detalles del alojamiento */
 .alojamiento-detalles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  gap: 12px;
-  margin-bottom: 24px;
-  padding: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+  gap: 6px;
+  margin-bottom: 12px;
+  padding: 10px;
   background: rgba(232, 213, 168, 0.3);
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid rgba(201, 161, 74, 0.2);
 }
 .alojamiento-detalle { text-align: center; }
 .alojamiento-detalle-icon {
-  width: 32px; height: 32px;
-  margin: 0 auto 4px;
+  width: 20px; height: 20px;
+  margin: 0 auto 2px;
   color: var(--color-bosque);
 }
 .alojamiento-detalle-icon svg { width: 100%; height: 100%; }
 .alojamiento-detalle-label {
-  font-size: 0.7rem;
+  font-size: 0.55rem;
   color: var(--color-texto-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
   font-family: 'Cinzel', serif;
-}
-.alojamiento-detalle-valor {
-  font-size: 0.9375rem;
-  color: var(--color-bosque);
   font-weight: 600;
 }
+.alojamiento-detalle-valor {
+  font-size: 0.72rem;
+  color: var(--color-bosque);
+  font-weight: 600;
+  font-family: 'Cormorant Garamond', serif;
+}
 
-/* Form de reserva */
 .alojamiento-form {
   background: rgba(232, 213, 168, 0.3);
   border: 1px solid rgba(201, 161, 74, 0.2);
-  border-radius: 16px;
-  padding: 24px;
-  margin-top: 20px;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-top: 12px;
 }
 .alojamiento-form-title {
-  font-family: 'Cinzel', serif;
-  font-size: 1.0625rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.2rem;
   color: var(--color-bosque);
-  margin: 0 0 16px;
+  margin: 0 0 12px;
   text-align: center;
-  letter-spacing: 0.05em;
+  line-height: 1.1;
 }
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 8px;
+  margin-bottom: 8px;
 }
 @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
 .form-group { display: flex; flex-direction: column; }
 .form-group label {
-  font-size: 0.8125rem; color: var(--color-texto-muted);
-  margin-bottom: 4px; font-weight: 500;
+  font-size: 0.6rem;
+  color: var(--color-texto-muted);
+  margin-bottom: 2px;
   font-family: 'Cinzel', serif;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-weight: 600;
 }
 .form-group input, .form-group select {
-  padding: 10px 12px;
+  padding: 6px 8px;
   border: 1px solid rgba(201, 161, 74, 0.3);
-  border-radius: 8px;
-  background: rgba(255, 248, 231, 0.8);
+  border-radius: 6px;
+  background: rgba(255, 248, 231, 0.9);
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--color-texto);
   transition: all 0.2s;
 }
 .form-group input:focus, .form-group select:focus {
   border-color: var(--color-oro);
   outline: none;
-  background: #FFF8E7;
 }
 .alojamiento-form-acciones {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
-  margin-top: 16px;
+  margin-top: 10px;
 }
-.alojamiento-form-acciones .btn { flex: 1; min-width: 160px; }
-
-/* Botones con la estética mágica */
-.alojamiento-form .btn-primary {
-  background: linear-gradient(135deg, var(--color-fuego), var(--color-fuego-light));
-  color: var(--color-luz);
-  border: 1px solid var(--color-oro-brillante);
-  box-shadow: 0 0 30px rgba(200, 75, 45, 0.3), 0 8px 24px rgba(0, 0, 0, 0.3);
-  padding: 14px 28px;
-  border-radius: 999px;
+.alojamiento-form-acciones .btn { flex: 1; min-width: 120px; padding: 8px 12px; font-size: 0.7rem; }
+.alojamiento-form .btn-magico {
+  width: 100%;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #C84B2D, #E66A4A);
+  color: #FFF8E7;
+  border: 1px solid #C9A14A;
+  border-radius: 100px;
   font-family: 'Cinzel', serif;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 0.875rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 0.72rem;
+  cursor: none;
   transition: all 0.3s;
 }
-.alojamiento-form .btn-primary:hover {
+.alojamiento-form .btn-magico:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 50px rgba(232, 199, 122, 0.5), 0 12px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 30px rgba(200, 75, 45, 0.4);
 }
 .alojamiento-form .btn-bosque {
+  width: 100%;
+  padding: 10px 18px;
   background: var(--color-bosque);
-  color: var(--color-luz);
-  padding: 14px 28px;
-  border-radius: 999px;
+  color: #FFF8E7;
+  border: 1px solid var(--color-bosque-light);
+  border-radius: 100px;
   font-family: 'Cinzel', serif;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 0.875rem;
+  font-size: 0.72rem;
+  cursor: none;
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-flex; align-items: center; justify-content: center;
   transition: all 0.3s;
 }
-.alojamiento-form .btn-bosque:hover { background: var(--color-bosque-light); }
-
-/* Datos bancarios */
-.datos-bancarios-box {
-  background: rgba(232, 213, 168, 0.3);
-  border-left: 4px solid var(--color-oro);
-  border-radius: 8px;
-  padding: 20px 24px;
-  margin: 24px 0;
-}
-.datos-bancarios-box h4 {
-  color: var(--color-bosque);
-  margin: 0 0 12px;
-  font-size: 1.05rem;
-  font-family: 'Cinzel', serif;
-}
-.datos-bancarios-dato {
-  display: flex; justify-content: space-between;
-  padding: 4px 0;
-  border-bottom: 1px dashed rgba(107, 107, 107, 0.2);
-  font-size: 0.95rem;
-}
-.datos-bancarios-dato:last-child { border-bottom: none; }
-.datos-bancarios-dato strong {
-  color: var(--color-bosque);
-  font-family: 'Cinzel', serif;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-}
-.datos-bancarios-dato span { color: var(--color-texto-muted); font-family: 'Courier New', monospace; }
-.datos-bancarios-nota {
-  font-size: 0.8125rem; color: var(--color-texto-muted);
-  margin-top: 12px; font-style: italic;
+.alojamiento-form .btn-bosque:hover {
+  background: var(--color-bosque-light);
+  transform: translateY(-2px);
 }
 
 /* Sección mística al final del card */
 .alojamiento-mistico {
-  margin-top: 24px;
-  padding: 20px;
+  margin-top: 16px;
+  padding: 14px;
   background: linear-gradient(135deg, rgba(26, 26, 46, 0.05), rgba(45, 61, 46, 0.05));
   border: 1px solid rgba(201, 161, 74, 0.2);
-  border-radius: 12px;
+  border-radius: 8px;
   text-align: center;
   font-family: 'Great Vibes', cursive;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--color-oro-brillante);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 600px) {
-  .alojamiento-body { padding: 24px 20px; }
-  .alojamiento-hero-magico { padding: 130px 24px 60px; }
+  .alojamiento-body { padding: 16px 14px; }
+  .alojamiento-hero-magico { padding: 90px 24px 28px; }
 }
-
