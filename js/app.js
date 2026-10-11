@@ -41,12 +41,15 @@
   const initCursor = () => {
     const cursor = document.getElementById('magicCursor');
     if (!cursor) return;
-    let mouseX = 0, mouseY = 0;
+    let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
     let lastSparkTime = 0;
+    // Posición inicial centrada antes del primer mousemove
+    cursor.style.transform = `translate3d(${mouseX - 18}px, ${mouseY - 18}px, 0)`;
+
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX; mouseY = e.clientY;
-      cursor.style.left = mouseX + 'px';
-      cursor.style.top = mouseY + 'px';
+      // Usar translate3d directamente sin transition (más fluido, sin lag)
+      cursor.style.transform = `translate3d(${mouseX - 18}px, ${mouseY - 18}px, 0)`;
       const now = Date.now();
       if (now - lastSparkTime > 60) {
         createSpark(mouseX, mouseY);
