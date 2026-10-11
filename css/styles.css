@@ -914,6 +914,12 @@ body.door-opened .hero-content { opacity: 1; transform: translateY(0); }
   font-weight: 600;
 }
 .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+.footer-col-navegacion ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 10px;
+}
 .footer-col a {
   color: rgba(232, 213, 168, 0.75);
   font-family: var(--font-body);
