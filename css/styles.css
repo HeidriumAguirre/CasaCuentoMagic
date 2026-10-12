@@ -1086,6 +1086,122 @@ body.door-opened .chatbot { opacity: 1; pointer-events: all; }
 }
 
 /* ============================================
+   MODAL DE CONTACTO
+   ============================================ */
+.contacto-modal {
+  position: fixed; inset: 0; z-index: 250;
+  background: rgba(0, 0, 0, 0.7);
+  display: none !important;
+  align-items: center; justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(4px);
+}
+.contacto-modal.active {
+  display: flex !important;
+  animation: fadeIn 0.3s;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.contacto-modal-content {
+  background: var(--color-luz);
+  border-radius: 20px;
+  max-width: 480px; width: 100%;
+  max-height: 90vh; overflow-y: auto;
+  padding: 32px 28px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(201, 161, 74, 0.3);
+  animation: slideUp 0.4s ease;
+}
+.contacto-modal-close {
+  position: absolute; top: 14px; right: 14px;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(232, 213, 168, 0.4);
+  color: var(--color-bosque);
+  font-size: 16px;
+  display: grid; place-items: center;
+  border: none;
+  transition: all 0.2s;
+}
+body.magical-cursor-active .contacto-modal-close { cursor: none; }
+.contacto-modal-close:hover { background: var(--color-pergamino); transform: scale(1.05); }
+.contacto-modal-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: var(--color-oro-brillante);
+  margin: 0 0 8px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.contacto-modal-subtitle {
+  color: var(--color-texto-muted);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+.contacto-form .form-group { margin-bottom: 14px; }
+.contacto-form .form-group label {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-texto-muted);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.contacto-form input, .contacto-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(201, 161, 74, 0.3);
+  border-radius: 8px;
+  background: var(--color-crema);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  color: var(--color-texto);
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+body.magical-cursor-active .contacto-form input,
+body.magical-cursor-active .contacto-form textarea { cursor: none; }
+.contacto-form input:focus, .contacto-form textarea:focus {
+  border-color: var(--color-oro);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(201, 161, 74, 0.2);
+}
+.contacto-form textarea { resize: vertical; min-height: 100px; }
+.contacto-modal-btn {
+  width: 100%;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--color-fuego), var(--color-fuego-light));
+  color: var(--color-luz);
+  border: 1px solid var(--color-oro-brillante);
+  border-radius: 100px;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+  margin-top: 8px;
+}
+body.magical-cursor-active .contacto-modal-btn { cursor: none; }
+.contacto-modal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(200, 75, 45, 0.4);
+}
+.contacto-modal-note {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-fuego);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+
+/* ============================================
    REVEAL ANIMATIONS
    ============================================ */
 .reveal {
