@@ -261,13 +261,13 @@
   margin-top: 16px;
   padding: 14px;
   background: linear-gradient(135deg, rgba(26, 26, 46, 0.05), rgba(45, 61, 46, 0.05));
-  border: 1px solid rgba(201, 161, 74, 0.2);
+  border: 1px solid rgba(45, 61, 46, 0.25);
   border-radius: 8px;
   text-align: center;
   font-family: 'Great Vibes', cursive;
-  font-size: 1rem;
-  color: var(--color-oro-brillante);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  font-size: 1.125rem;
+  color: var(--color-bosque);
+  text-shadow: none;
 }
 
 @media (max-width: 600px) {
