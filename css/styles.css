@@ -867,18 +867,18 @@ body.door-opened .hero-content { opacity: 1; transform: translateY(0); }
 .site-footer {
   background: var(--color-noche);
   color: var(--color-pergamino);
-  padding: 80px 24px 30px;
+  padding: 48px 24px 24px;
   border-top: 1px solid rgba(201, 161, 74, 0.2);
 }
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 48px;
+  gap: 32px;
   max-width: 1280px;
-  margin: 0 auto 48px;
+  margin: 0 auto 28px;
 }
 @media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 900px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 56px; } }
+@media (min-width: 900px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; } }
 
 .footer-brand .logo {
   align-items: flex-start;
@@ -944,12 +944,12 @@ body.door-opened .hero-content { opacity: 1; transform: translateY(0); }
 .footer-social svg { width: 18px; height: 18px; }
 
 .footer-bottom {
-  padding-top: 24px;
+  padding-top: 16px;
   border-top: 1px solid rgba(201, 161, 74, 0.15);
   text-align: center;
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: rgba(232, 213, 168, 0.5);
 }
 
