@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Eventos de Maravillas en CasaCuento Hotel & Spa." />
+<meta name="theme-color" content="#2D3D2E" />
+<title>Eventos de Maravillas · CasaCuento Mágica</title>
+<link rel="icon" type="image/png" href="assets/logo-magic-house-en.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<script src="js/includes.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#inicio" class="skip-link">Saltar al contenido</a>
+<div data-include="partials/header.html"></div>
+
+<main id="inicio">
+  <section class="encanto-page-hero">
+    <div class="encanto-page-hero-bg" style="background-image: url('fotos-web/galeria/galeria-11.webp');" aria-hidden="true"></div>
+    <div class="encanto-page-hero-overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="encanto-page-hero-content reveal">
+        <span class="encanto-page-hero-eyebrow">✦ Encanto · Seis ✦</span>
+        <h1 class="encanto-page-hero-title">Eventos de <span class="magic-word">Maravillas</span></h1>
+        <p class="encanto-page-hero-subtitle">Matrimonios, cumpleaños y eventos corporativos en un entorno de cuento.</p>
+        <div class="encanto-page-hero-actions">
+          <a href="https://wa.me/56991924089?text=Hola%20CasaCuento%2C%20quiero%20cotizar%20un%20evento" target="_blank" rel="noopener" class="btn btn-primary">Cotizar mi evento</a>
+          <a href="index.html" class="btn btn-secondary">Volver al inicio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="encanto-description-section">
+    <div class="container">
+      <div class="encanto-description-content reveal">
+        <h2>Tu evento, en un lugar de cuento</h2>
+        <p>Matrimonios, cumpleaños, aniversarios y eventos corporativos en un entorno de cuento. Coordinación personalizada con nuestro equipo para que cada celebración sea única e inolvidable. La piscina, el bosque y la chimenea crean el marco perfecto para tus momentos más importantes.</p>
+
+        <div class="encanto-features">
+          <div class="encanto-feature">
+            <div class="encanto-feature-icon">💍</div>
+            <h3>Matrimonios</h3>
+            <p>Ceremonias al aire libre con vista al bosque y la piscina como marco.</p>
+          </div>
+          <div class="encanto-feature">
+            <div class="encanto-feature-icon">🎂</div>
+            <h3>Cumpleaños</h3>
+            <p>Celebraciones íntimas o grandes, con piscina privada disponible.</p>
+          </div>
+          <div class="encanto-feature">
+            <div class="encanto-feature-icon">💼</div>
+            <h3>Eventos corporativos</h3>
+            <p>Retiros de equipo, reuniones ejecutivas y lanzamientos en un lugar inspirador.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="encanto-gallery-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">✦ Momentos Únicos ✦</span>
+        <h2 class="section-title">Celebraciones que se recuerdan</h2>
+        <p class="section-subtitle">Una selección de imágenes del entorno para tu evento.</p>
+      </div>
+      <div class="encanto-gallery">
+        <figure class="encanto-gallery-item"><img src="fotos-web/galeria/galeria-03.webp" alt="Loft moderno" loading="lazy" /></figure>
+        <figure class="encanto-gallery-item"><img src="fotos-web/galeria/galeria-11.webp" alt="Terraza" loading="lazy" /></figure>
+        <figure class="encanto-gallery-item"><img src="fotos-web/galeria/galeria-08.webp" alt="Atardecer" loading="lazy" /></figure>
+      </div>
+      <p class="encanto-gallery-note">Imágenes placeholder. Se reemplazarán por contenido generado con IA según indique el cliente.</p>
+    </div>
+  </section>
+
+  <section class="encanto-cta-section">
+    <div class="container">
+      <div class="encanto-cta-card reveal">
+        <h2 class="encanto-cta-title">¿Listo para tu evento de maravillas?</h2>
+        <p class="encanto-cta-text">Escríbenos por WhatsApp con la fecha y el número de personas. Te enviamos una cotización personalizada.</p>
+        <a href="https://wa.me/56991924089?text=Hola%20CasaCuento%2C%20quiero%20cotizar%20un%20evento" target="_blank" rel="noopener" class="btn btn-primary">Cotizar mi evento</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div data-include="partials/footer.html"></div>
+<div data-include="partials/chatbot.html"></div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:20px;">
+  <button id="lightboxClose" aria-label="Cerrar" style="position:absolute;top:20px;right:20px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.1);color:white;font-size:20px;">✕</button>
+  <img id="lightboxImg" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:8px;" />
+</div>
+</body>
+</html>

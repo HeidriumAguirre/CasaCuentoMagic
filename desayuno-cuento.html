@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Desayuno de Cuento en CasaCuento Hotel & Spa." />
+<meta name="theme-color" content="#2D3D2E" />
+<title>Desayuno de Cuento · CasaCuento Mágica</title>
+<link rel="icon" type="image/png" href="assets/logo-magic-house-en.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<script src="js/includes.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#inicio" class="skip-link">Saltar al contenido</a>
+<div data-include="partials/header.html"></div>
+
+<main id="inicio">
+  <section class="encanto-page-hero">
+    <div class="encanto-page-hero-bg" style="background-image: url('fotos-web/galeria/galeria-10.webp');" aria-hidden="true"></div>
+    <div class="encanto-page-hero-overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="encanto-page-hero-content reveal">
+        <span class="encanto-page-hero-eyebrow">✦ Encanto · Dos ✦</span>
+        <h1 class="encanto-page-hero-title"><span class="magic-word">Desayuno</span> de Cuento</h1>
+        <p class="encanto-page-hero-subtitle">Pan recién hecho, café de la zona y frutas frescas cada mañana.</p>
+        <div class="encanto-page-hero-actions">
+          <a href="https://wa.me/56991924089?text=Hola%20CasaCuento%2C%20me%20interesa%20el%20desayuno" target="_blank" rel="noopener" class="btn btn-primary">Consultar por WhatsApp</a>
+          <a href="index.html" class="btn btn-secondary">Volver al inicio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="encanto-description-section">
+    <div class="container">
+      <div class="encanto-description-content reveal">
+        <h2>Una mañana encantadora</h2>
+        <p>Cada mañana servimos un desayuno casero con productos frescos y locales: pan recién hecho, café de la zona, frutas de temporada y mermeladas artesanales. Es la forma más encantadora de empezar el día antes de salir a descubrir Mantagua.</p>
+
+        <div class="encanto-features">
+          <div class="encanto-feature">
+            <div class="encanto-feature-icon">🍞</div>
+            <h3>Pan artesanal</h3>
+            <p>Pan recién hecho cada mañana, horneado en casa con recetas tradicionales.</p>
+          </div>
+          <div class="encanto-feature">
+            <div class="encanto-feature-icon">☕</div>
+            <h3>Café de la zona</h3>
+            <p>Café de productores locales de la V Región, tostado suave para conservar su aroma.</p>
+          </div>
+          <div class="encanto-feature">
+            <div class="encanto-feature-icon">🍯</div>
+            <h3>Mermeladas y frutas</h3>
+            <p>Mermeladas caseras y frutas de temporada de la zona.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="encanto-gallery-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">✦ Sabores del Alba ✦</span>
+        <h2 class="section-title">Sabores de la mañana</h2>
+        <p class="section-subtitle">Una selección de imágenes del desayuno y el comedor.</p>
+      </div>
+      <div class="encanto-gallery">
+        <figure class="encanto-gallery-item"><img src="fotos-web/galeria/galeria-10.webp" alt="Cocina equipada" loading="lazy" /></figure>
+        <figure class="encanto-gallery-item"><img src="fotos-web/galeria/galeria-11.webp" alt="Terraza" loading="lazy" /></figure>
+        <figure class="encanto-gallery-item"><img src="fotos-web/galeria/galeria-09.webp" alt="Detalle arquitectónico" loading="lazy" /></figure>
+      </div>
+      <p class="encanto-gallery-note">Imágenes placeholder. Se reemplazarán por contenido generado con IA según indique el cliente.</p>
+    </div>
+  </section>
+
+  <section class="encanto-cta-section">
+    <div class="container">
+      <div class="encanto-cta-card reveal">
+        <h2 class="encanto-cta-title">¿Reservas el desayuno?</h2>
+        <p class="encanto-cta-text">El desayuno está incluido para todos los huéspedes. Escríbenos por WhatsApp y te contamos los horarios.</p>
+        <a href="https://wa.me/56991924089?text=Hola%20CasaCuento%2C%20quiero%20reservar%20con%20desayuno" target="_blank" rel="noopener" class="btn btn-primary">Reservar por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div data-include="partials/footer.html"></div>
+<div data-include="partials/chatbot.html"></div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:20px;">
+  <button id="lightboxClose" aria-label="Cerrar" style="position:absolute;top:20px;right:20px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.1);color:white;font-size:20px;">✕</button>
+  <img id="lightboxImg" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:8px;" />
+</div>
+</body>
+</html>
