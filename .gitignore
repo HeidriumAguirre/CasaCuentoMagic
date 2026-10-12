@@ -6,10 +6,6 @@ desktop.ini
 # Windows
 $RECYCLE.BIN/
 
-# Netlify
-.netlify/
-netlify/
-
 # IDEs / Editores
 .vscode/
 .idea/
@@ -28,6 +24,7 @@ yarn-error.log*
 # Node
 node_modules/
 package-lock.json
+
 
 # Archivos temporales
 *.tmp
