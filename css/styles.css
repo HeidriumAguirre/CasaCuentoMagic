@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    CSS CUSTOM PROPERTIES
    ============================================ */
 :root {
@@ -926,7 +926,8 @@ body.door-opened .hero-content { opacity: 1; transform: translateY(0); }
   gap: 12px;
   margin-top: 8px;
 }
-.footer-social a {
+.footer-social a,
+.footer-social span {
   width: 42px; height: 42px;
   display: grid; place-items: center;
   background: rgba(201, 161, 74, 0.1);
@@ -934,6 +935,7 @@ body.door-opened .hero-content { opacity: 1; transform: translateY(0); }
   border-radius: 50%;
   color: var(--color-oro-brillante);
   transition: all 0.3s;
+  cursor: default;
 }
 .footer-social a:hover {
   background: var(--color-oro);
@@ -1209,3 +1211,69 @@ body.magical-cursor-active .contacto-modal-btn { cursor: none; }
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+/* ============================================
+   CONTACTO - cards magicas
+   ============================================ */
+.contacto-magico-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+@media (min-width: 640px) { .contacto-magico-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .contacto-magico-grid { grid-template-columns: repeat(3, 1fr); } }
+.contacto-magico-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 24px;
+  background: linear-gradient(180deg, rgba(255, 248, 231, 0.85) 0%, rgba(232, 213, 168, 0.65) 100%);
+  border: 1px solid var(--color-pergamino-dark);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(45, 61, 46, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.contacto-magico-card::before {
+  content: "✦";
+  position: absolute;
+  top: 8px; right: 14px;
+  color: var(--color-oro);
+  opacity: 0.4;
+  font-size: 1rem;
+}
+.contacto-magico-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(45, 61, 46, 0.2);
+  border-color: var(--color-oro);
+  background: linear-gradient(180deg, rgba(255, 248, 231, 1) 0%, rgba(232, 213, 168, 0.9) 100%);
+}
+.contacto-magico-icon {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-bosque), var(--color-bosque-light));
+  color: var(--color-oro-brillante);
+  display: grid; place-items: center;
+  margin-bottom: 16px;
+  border: 2px solid var(--color-oro);
+  box-shadow: 0 0 18px rgba(201, 161, 74, 0.25);
+}
+.contacto-magico-icon svg { width: 28px; height: 28px; }
+.contacto-magico-titulo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-bosque);
+  margin-bottom: 4px;
+  letter-spacing: 0.04em;
+}
+.contacto-magico-subtitulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  color: var(--color-texto);
+}

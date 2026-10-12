@@ -413,66 +413,8 @@
   // INICIALIZACIÓN (espera a que carguen los partials)
   // ============================================
   // ============================================
-  // MODAL DE CONTACTO
+  // (modal de contacto eliminado)
   // ============================================
-  const initContactoModal = () => {
-    const btn = document.getElementById('contactoBtn');
-    const modal = document.getElementById('contactoModal');
-    const close = document.getElementById('contactoModalClose');
-    const form = document.getElementById('contactoForm');
-    const note = document.getElementById('contactoModalNote');
-
-    if (btn && modal) {
-      btn.addEventListener('click', () => {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
-    }
-    if (close) {
-      close.addEventListener('click', () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    }
-    if (modal) {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      });
-    }
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const nombre = form.nombre.value.trim();
-        const asunto = form.asunto.value.trim();
-        const correo = form.correo.value.trim();
-        const mensaje = form.mensaje.value.trim();
-        if (!nombre || !asunto || !correo || !mensaje) {
-          if (note) { note.textContent = 'Por favor completa todos los campos.'; note.style.display = 'block'; note.style.color = '#C84B2D'; }
-          return;
-        }
-        // Construir mailto con los datos pre-llenados
-        const body = `Nombre: ${nombre}\nCorreo: ${correo}\n\nMensaje:\n${mensaje}`;
-        const mailtoUrl = `mailto:refugiocasacuento@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(body)}`;
-        window.location.href = mailtoUrl;
-        if (note) { note.textContent = 'Abriendo tu cliente de correo...'; note.style.display = 'block'; note.style.color = '#2E4A3E'; }
-        setTimeout(() => {
-          modal.classList.remove('active');
-          document.body.style.overflow = '';
-          form.reset();
-        }, 1000);
-      });
-    }
-    // Cerrar con ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-  };
 
   const ready = window.__includesReady || Promise.resolve();
 
@@ -488,6 +430,5 @@
     initReveal();
     initLightbox();
     initChatbot();
-    initContactoModal();
   });
 })();
