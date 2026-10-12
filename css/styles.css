@@ -1452,3 +1452,198 @@ body.magical-cursor-active .contacto-modal-btn { cursor: none; }
   opacity: 0.9;
   margin-bottom: 24px;
 }
+/* ============================================
+   MODAL DE SERVICIO (Mágica)
+   Estetica magica con paleta pergamino + oro + fuego + noche
+   ============================================ */
+.servicio-modal-magica {
+  position: fixed; inset: 0; z-index: 240;
+  background: rgba(26, 26, 46, 0.78);
+  display: none !important;
+  align-items: flex-start; justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow-y: auto;
+}
+.servicio-modal-magica.active { display: flex !important; animation: fadeInServicioMagica 0.3s; }
+@keyframes fadeInServicioMagica { from { opacity: 0; } to { opacity: 1; } }
+
+.servicio-modal-close-magica {
+  position: fixed; top: 18px; right: 18px;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--color-crema);
+  color: var(--color-bosque);
+  font-size: 18px;
+  display: grid; place-items: center;
+  border: 1px solid var(--color-pergamino-dark);
+  transition: all 0.2s;
+  cursor: pointer;
+  z-index: 250;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  font-family: 'Cinzel', serif;
+}
+.servicio-modal-close-magica:hover { background: var(--color-oro); color: var(--color-crema); transform: scale(1.06); }
+
+.servicio-modal-hero-magica {
+  position: relative;
+  background: linear-gradient(180deg, #1A1A2E 0%, #2D3D2E 100%);
+  color: #FFF8E7;
+  padding: 80px 24px 56px;
+  text-align: center;
+  overflow: hidden;
+}
+.servicio-modal-hero-bg-magica {
+  position: absolute; inset: 0; z-index: 0;
+  background-size: cover; background-position: center;
+  opacity: 0.4;
+}
+.servicio-modal-hero-overlay-magica {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(26,26,46,0.55) 0%, rgba(26,26,46,0.78) 100%);
+}
+.servicio-modal-hero-content-magica {
+  position: relative; z-index: 2;
+  max-width: 760px; margin: 0 auto;
+}
+.servicio-modal-eyebrow-magica {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  color: var(--color-oro);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  margin-bottom: 14px;
+}
+.servicio-modal-title-magica {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.875rem, 4.5vw, 2.75rem);
+  font-weight: 600;
+  margin-bottom: 14px;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.5);
+}
+.servicio-modal-title-magica .magic-word {
+  font-family: 'Great Vibes', cursive;
+  font-style: italic;
+  color: var(--color-oro-brillante);
+  font-weight: 400;
+}
+.servicio-modal-subtitle-magica {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-style: italic;
+  opacity: 0.92;
+}
+
+.servicio-modal-body-magica {
+  background: var(--color-crema);
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 32px 48px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  border: 1px solid var(--color-pergamino-dark);
+  border-top: none;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.servicio-modal-description-magica {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-texto);
+  margin-bottom: 28px;
+}
+
+.servicio-modal-features-magica {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+@media (min-width: 700px) { .servicio-modal-features-magica { grid-template-columns: repeat(3, 1fr); } }
+.servicio-modal-feature-magica {
+  background: linear-gradient(180deg, var(--color-pergamino) 0%, #FAF3E0 100%);
+  border: 1px solid var(--color-pergamino-dark);
+  border-radius: 14px;
+  padding: 20px 14px;
+  text-align: center;
+}
+.servicio-modal-feature-icon-magica { font-size: 1.75rem; margin-bottom: 8px; }
+.servicio-modal-feature-title-magica {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  color: var(--color-bosque);
+  margin-bottom: 6px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.servicio-modal-feature-text-magica {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.875rem;
+  color: var(--color-texto-muted);
+  line-height: 1.5;
+}
+
+.servicio-modal-section-title-magica {
+  font-family: 'Cinzel', serif;
+  font-size: 1.125rem;
+  color: var(--color-bosque);
+  margin-bottom: 14px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.servicio-modal-gallery-magica {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 32px;
+}
+@media (min-width: 700px) { .servicio-modal-gallery-magica { grid-template-columns: repeat(4, 1fr); } }
+.servicio-modal-gallery-magica img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--color-pergamino-dark);
+  display: block;
+  transition: transform 0.3s;
+}
+.servicio-modal-gallery-magica img:hover { transform: scale(1.05); }
+.servicio-modal-no-gallery-magica {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--color-texto-muted);
+  font-size: 0.95rem;
+  padding: 28px;
+  background: var(--color-pergamino);
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+.servicio-modal-cta-magica { text-align: center; }
+.servicio-modal-cta-button-magica {
+  display: inline-block;
+  padding: 14px 36px;
+  background: var(--color-oro);
+  color: var(--color-noche);
+  border-radius: 999px;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.875rem;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(201, 161, 74, 0.45);
+  transition: all 0.3s;
+}
+.servicio-modal-cta-button-magica:hover {
+  background: var(--color-oro-brillante);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(201, 161, 74, 0.6);
+}
