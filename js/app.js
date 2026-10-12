@@ -167,24 +167,26 @@
   const initMobileNav = () => {
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
-    if (!navToggle || !navMenu) return;
-    navToggle.addEventListener('click', () => {
-      const active = navMenu.classList.toggle('active');
-      navToggle.classList.toggle('active');
-      navToggle.setAttribute('aria-expanded', active);
-    });
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', 'false');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const active = navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', active);
       });
-    });
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          navToggle.classList.remove('active');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
 
-    // Dropdown toggle (Habitaciones y Tarifas)
+    // Dropdown toggle (Habitaciones y Tarifas) - independiente del menu movil
     document.querySelectorAll('.nav-dropdown-toggle').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         const parent = btn.parentElement;
         const isOpen = parent.classList.toggle('open');
         btn.setAttribute('aria-expanded', isOpen);
