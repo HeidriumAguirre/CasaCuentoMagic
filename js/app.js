@@ -19,12 +19,22 @@
     const doorOverlay = document.getElementById('doorOverlay');
     const enterBtn = document.getElementById('enterBtn');
     if (!doorOverlay) return;
+    const DOOR_KEY = 'casacuento-door-opened';
+    let alreadyOpened = false;
+    try { alreadyOpened = sessionStorage.getItem(DOOR_KEY) === '1'; } catch (e) {}
+    if (alreadyOpened) {
+      doorOverlay.style.display = 'none';
+      doorOverlay.classList.add('opened');
+      document.body.classList.add('door-opened');
+      return;
+    }
     document.body.classList.add('door-active');
     const openDoor = () => {
       if (doorOverlay.classList.contains('opened')) return;
       doorOverlay.classList.add('opened');
       document.body.classList.remove('door-active');
       document.body.classList.add('door-opened');
+      try { sessionStorage.setItem(DOOR_KEY, '1'); } catch (e) {}
       setTimeout(() => { doorOverlay.style.display = 'none'; }, 2200);
     };
     enterBtn.addEventListener('click', openDoor);
