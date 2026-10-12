@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Arboles Magicos en CasaCuento Hotel & Spa - bosque nativo de Mantagua." />
+<meta name="theme-color" content="#2D3D2E" />
+<title>Arboles Magicos · CasaCuento Magica</title>
+<link rel="icon" type="image/png" href="assets/logo-magic-house-en.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<script src="js/includes.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#inicio" class="skip-link">Saltar al contenido</a>
+<div data-include="partials/header.html"></div>
+
+<main id="inicio">
+  <section class="encanto-page-hero">
+    <div class="encanto-page-hero-bg" style="background-image: url('fotos-web/galeria/galeria-06.webp');" aria-hidden="true"></div>
+    <div class="encanto-page-hero-overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="encanto-page-hero-content reveal">
+        <span class="encanto-page-hero-eyebrow">✦ Encanto · Tres ✦</span>
+        <h1 class="encanto-page-hero-title"><span class="magic-word">Árboles</span> Mágicos</h1>
+        <p class="encanto-page-hero-subtitle">El bosque nativo de Mantagua abraza cada rincón del hotel.</p>
+        <div class="encanto-page-hero-actions">
+          <a href="https://wa.me/56991924089?text=Hola%20CasaCuento%2C%20me%20interesa%20el%20bosque" target="_blank" rel="noopener" class="btn btn-primary">Consultar por WhatsApp</a>
+          <a href="index.html" class="btn btn-secondary">Volver al inicio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="encanto-description-section">
+    <div class="container">
+      <div class="encanto-description-content reveal">
+        <h2>El bosque nativo de Mantagua</h2>
+        <p>Senderos para caminar, árboles centenarios, pájaros cantores a la mañana. Una invitación a desconectarse del ritmo de la ciudad y reconectar con lo esencial.</p>
+
+        <div class="encanto-features">
+          <div class="encanto-feature">
+            <div class="encanto-feature-icon">🌲</div>
+            <h3>Bosque nativo</h3>
+            <p>Árboles centenarios que forman un ecosistema protegido y silencioso.</p>
+          </div>
+          <div class="encanto-feature">
+            <div class="encanto-feature-icon">🥾</div>
+            <h3>Senderos</h3>
+            <p>Caminos peatonales señalizados para recorrer el bosque a tu ritmo.</p>
+          </div>
+          <div class="encanto-feature">
+            <div class="encanto-feature-icon">🦜</div>
+            <h3>Avistamiento</h3>
+            <p>Pájaros y fauna nativa para observar desde los miradores del hotel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="encanto-gallery-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">✦ Reino Natural ✦</span>
+        <h2 class="section-title">Naturaleza viva</h2>
+        <p class="section-subtitle">Una selección de imágenes del bosque y los senderos.</p>
+      </div>
+      <div class="encanto-gallery">
+        <figure class="encanto-gallery-item"><img src="fotos-web/galeria/galeria-06.webp" alt="Naturaleza nativa" loading="lazy" /></figure>
+        <figure class="encanto-gallery-item"><img src="fotos-web/galeria/galeria-05.webp" alt="Cabaña rodeada de bosque" loading="lazy" /></figure>
+        <figure class="encanto-gallery-item"><img src="fotos-web/galeria/galeria-08.webp" alt="Atardecer" loading="lazy" /></figure>
+      </div>
+      <p class="encanto-gallery-note">Imágenes placeholder. Se reemplazarán por contenido generado con IA según indique el cliente.</p>
+    </div>
+  </section>
+
+  <section class="encanto-cta-section">
+    <div class="container">
+      <div class="encanto-cta-card reveal">
+        <h2 class="encanto-cta-title">¿Vienes a conocer el bosque?</h2>
+        <p class="encanto-cta-text">Escríbenos por WhatsApp y te recomendamos los mejores paseos según la temporada.</p>
+        <a href="https://wa.me/56991924089?text=Hola%20CasaCuento%2C%20quiero%20conocer%20el%20bosque" target="_blank" rel="noopener" class="btn btn-primary">Hablar por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div data-include="partials/footer.html"></div>
+<div data-include="partials/chatbot.html"></div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:20px;">
+  <button id="lightboxClose" aria-label="Cerrar" style="position:absolute;top:20px;right:20px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.1);color:white;font-size:20px;">✕</button>
+  <img id="lightboxImg" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:8px;" />
+</div>
+</body>
+</html>

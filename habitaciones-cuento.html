@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Habitaciones de Cuento en CasaCuento Hotel & Spa." />
+<meta name="theme-color" content="#2D3D2E" />
+<title>Habitaciones de Cuento · CasaCuento Mágica</title>
+<link rel="icon" type="image/png" href="assets/logo-magic-house-en.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<script src="js/includes.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#inicio" class="skip-link">Saltar al contenido</a>
+<div data-include="partials/header.html"></div>
+
+<main id="inicio">
+  <section class="encanto-page-hero">
+    <div class="encanto-page-hero-bg" style="background-image: url('fotos-web/galeria/galeria-02.webp');" aria-hidden="true"></div>
+    <div class="encanto-page-hero-overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="encanto-page-hero-content reveal">
+        <span class="encanto-page-hero-eyebrow">✦ Encanto · Cuatro ✦</span>
+        <h1 class="encanto-page-hero-title"><span class="magic-word">Habitaciones</span> de Cuento</h1>
+        <p class="encanto-page-hero-subtitle">Suites de piedra y madera noble, equipadas para el descanso más profundo.</p>
+        <div class="encanto-page-hero-actions">
+          <a href="habitaciones.html" class="btn btn-primary">Ver tipos de habitaciones</a>
+          <a href="index.html" class="btn btn-secondary">Volver al inicio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="encanto-description-section">
+    <div class="container">
+      <div class="encanto-description-content reveal">
+        <h2>Descanso profundo</h2>
+        <p>Las suites combinan piedra y madera noble. Están equipadas con ropa de cama premium, calefacción y todo lo necesario para un descanso profundo. Cada habitación tiene su propio carácter, inspirado en el bosque que las rodea.</p>
+
+        <div class="encanto-features">
+          <div class="encanto-feature">
+            <div class="encanto-feature-icon">🛏️</div>
+            <h3>Ropa de cama premium</h3>
+            <p>Sábanas de algodón de alto gramaje y almohadas hipoalergénicas.</p>
+          </div>
+          <div class="encanto-feature">
+            <div class="encanto-feature-icon">🔥</div>
+            <h3>Calefacción</h3>
+            <p>Calefacción central para que el invierno sea cálido y silencioso.</p>
+          </div>
+          <div class="encanto-feature">
+            <div class="encanto-feature-icon">🌙</div>
+            <h3>Privacidad</h3>
+            <p>Cada suite está pensada para ofrecer silencio y descanso sin interrupciones.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="encanto-gallery-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">✦ Ambientes que Invitan ✦</span>
+        <h2 class="section-title">Descanso y naturaleza</h2>
+        <p class="section-subtitle">Una selección de imágenes de las habitaciones.</p>
+      </div>
+      <div class="encanto-gallery">
+        <figure class="encanto-gallery-item"><img src="fotos-web/galeria/galeria-02.webp" alt="Habitación boutique" loading="lazy" /></figure>
+        <figure class="encanto-gallery-item"><img src="fotos-web/galeria/galeria-03.webp" alt="Loft moderno" loading="lazy" /></figure>
+        <figure class="encanto-gallery-item"><img src="fotos-web/galeria/galeria-04.webp" alt="Suite con vista" loading="lazy" /></figure>
+        <figure class="encanto-gallery-item"><img src="fotos-web/galeria/galeria-09.webp" alt="Detalle arquitectónico" loading="lazy" /></figure>
+      </div>
+      <p class="encanto-gallery-note">Imágenes placeholder. Se reemplazarán por contenido generado con IA según indique el cliente.</p>
+    </div>
+  </section>
+
+  <section class="encanto-cta-section">
+    <div class="container">
+      <div class="encanto-cta-card reveal">
+        <h2 class="encanto-cta-title">¿Quieres ver los tipos de habitación?</h2>
+        <p class="encanto-cta-text">Tenemos 8 opciones: 2 habitaciones, 2 lofts, 2 suites y 2 cabañas. Visita la página de tipos para ver todas.</p>
+        <a href="habitaciones.html" class="btn btn-primary">Ver tipos de habitaciones</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div data-include="partials/footer.html"></div>
+<div data-include="partials/chatbot.html"></div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:20px;">
+  <button id="lightboxClose" aria-label="Cerrar" style="position:absolute;top:20px;right:20px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.1);color:white;font-size:20px;">✕</button>
+  <img id="lightboxImg" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:8px;" />
+</div>
+</body>
+</html>
