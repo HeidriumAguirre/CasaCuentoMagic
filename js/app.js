@@ -428,7 +428,78 @@
   // (modal de contacto eliminado)
   // ============================================
 
-  const ready = window.__includesReady || Promise.resolve();
+
+  // ============================================
+  // CONSIDERACIONES (modal flotante en index + modal al reservar)
+  // ============================================
+  const STORAGE_KEY = 'casacuento-consideraciones-oculto';
+
+  const initConsideraciones = () => {
+    const flotante = document.getElementById('consideracionesFlotante');
+    const modal = document.getElementById('consideracionesModal');
+    const modalAceptar = document.getElementById('consideracionesModalAceptar');
+    const modalCerrar = document.getElementById('consideracionesModalCerrar');
+    const modalNomostrar = document.getElementById('consideracionesModalNomostrar');
+    const cerrarFlotante = document.querySelector('[data-consideraciones-cerrar]');
+    const noMostrarFlotante = document.querySelector('[data-consideraciones-nomostrar]');
+
+    const isIndex = window.location.pathname.endsWith('index.html') ||
+                    window.location.pathname === '/' ||
+                    window.location.pathname.endsWith('/') ||
+                    window.location.pathname === '';
+    const isOculto = localStorage.getItem(STORAGE_KEY) === 'true';
+    if (flotante && isIndex && !isOculto) {
+      setTimeout(() => flotante.classList.add('visible'), 1500);
+    }
+    if (cerrarFlotante) {
+      cerrarFlotante.addEventListener('click', () => {
+        if (noMostrarFlotante && noMostrarFlotante.checked) {
+          localStorage.setItem(STORAGE_KEY, 'true');
+        }
+        flotante.classList.remove('visible');
+      });
+    }
+
+    const formsReserva = document.querySelectorAll('[data-alojamiento-form]');
+    formsReserva.forEach(form => {
+      form.addEventListener('submit', (e) => {
+        if (modal) {
+          e.preventDefault();
+          if (localStorage.getItem(STORAGE_KEY) === 'true') {
+            form.requestSubmit();
+            return;
+          }
+          modal.classList.add('visible');
+          document.body.style.overflow = 'hidden';
+
+          if (modalAceptar) {
+            modalAceptar.onclick = () => {
+              if (modalNomostrar && modalNomostrar.checked) {
+                localStorage.setItem(STORAGE_KEY, 'true');
+              }
+              modal.classList.remove('visible');
+              document.body.style.overflow = '';
+              form.requestSubmit();
+            };
+          }
+          if (modalCerrar) {
+            modalCerrar.onclick = () => {
+              modal.classList.remove('visible');
+              document.body.style.overflow = '';
+            };
+          }
+          modal.onclick = (e) => {
+            if (e.target === modal) {
+              modal.classList.remove('visible');
+              document.body.style.overflow = '';
+            }
+          };
+        }
+      });
+    });
+  };
+
+(  const ready = window\.__includesReady) || Promise.resolve();
 
   ready.then(() => {
     setYear();
@@ -440,6 +511,7 @@
     initMobileNav();
     initScrollSpy();
     initReveal();
+    initConsideraciones();
     initLightbox();
     initChatbot();
     initServicioModal();
